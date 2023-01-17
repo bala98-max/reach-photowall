@@ -112,6 +112,9 @@ button {
     cursor: pointer;
     color: #065784;
 }
+.nav-home:hover{
+    color: #7B8589;
+}
 .form button:hover {
     background: #7B8589;
 }
