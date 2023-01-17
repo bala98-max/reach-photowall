@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import Title from './Title'
 import PhotoWall from './PhotoWall'
 import AddPhoto from './AddPhoto'
-import {Route} from 'react-router-dom'
+import {Route,Routes} from 'react-router-dom'
 
 class Main extends Component {
     constructor() {
@@ -16,8 +15,7 @@ class Main extends Component {
               }, {
                 id: 1,
                 description: "Aliens???",
-                imageLink: "https://img.purch.com/rc/640x415/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA3Mi84NTEvb3JpZ2luYWwvc3BhY2V4LWlyaWRpdW00LWxhdW5jaC10YXJpcS1tYWxpay5qcGc=" +
-                    "08323785_735653395_n.jpg"
+                imageLink: "https://plus.unsplash.com/premium_photo-1668116307088-583ee0d4aaf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1065&q=80"
               }, {
                 id: 2,
                 description: "On a vacation!",
@@ -55,20 +53,19 @@ class Main extends Component {
         return ( 
         
         <div>
-            <Route exact path = "/" render={() => (
-                 <div>
-                      <Title title={'Photowall'}/>
-                      <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate = {this.navigate}/>
-                 </div>
+            <Routes>
+                <Route exact path = "/" element = { <PhotoWall title={'Photowall'} posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate = {this.navigate}/>} />
+                <Route exact path='/Addphoto' element = {<AddPhoto onAddPhoto={(addedPost) => {this.addPhoto(addedPost)}}/>}/>
+            </Routes>
 
-            )}/> 
-
-            <Route path= "/AddPhoto" render = {({history}) => (
-                <AddPhoto onAddPhoto={(addedPost) => {
-                    this.addPhoto(addedPost)
-                    history.push('/')
-                }}/>
-            )}/>
+            <Routes>
+                <Route path= "/AddPhoto" render = {({history}) => (
+                    <AddPhoto onAddPhoto={(addedPost) => {
+                        this.addPhoto(addedPost)
+                        history.push('/')
+                    }}/>
+                )}/>
+            </Routes>
          </div>
         )
     }

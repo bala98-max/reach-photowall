@@ -1,6 +1,6 @@
 html {
     font-size: 10px;
-    font-family: 'sans-serif';
+    font-family: 'Edu VIC WA NT Beginner', cursive;
 }
 
 p {
@@ -10,18 +10,19 @@ p {
 
 
 h1 {
-    font-family: 'billabong';
+    font-family: 'Noto Sans Mono', monospace;
     text-align: center;
     font-size: 13rem;
-    font-weight: 100;
+    font-weight: bold;
     margin: 2rem 0;
     letter-spacing: -1px;
     color: black;
+    cursor: default;
 }
 
 @font-face {
-    font-family: 'billabong';
-	src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
+    font-family: 'cursive';
+	src: url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Lato&family=Noto+Sans+Mono&family=Space+Mono:ital@1&display=swap") rel="stylesheet";
 }
 
 .photoGrid{
@@ -44,7 +45,6 @@ h1 {
 .photo {
     width: calc(100% + 4rem);
     margin: -2rem 0rem 0rem -2rem;
-
 }
 
 
@@ -66,7 +66,7 @@ button {
     margin: 20px auto;
     display: table;
     padding: 40px;
-    background: url("https://image.flaticon.com/icons/svg/60/60740.svg") center no-repeat;
+    /* background: url("https://image.flaticon.com/icons/svg/60/60740.svg") center no-repeat; */
     background-size: contain;
     border: none;
 }
@@ -80,7 +80,7 @@ button {
 }
 
 .form input {
-    font-family: sans-serif;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
     background: #f2f2f2;
     width: 100%;
     border: none;
@@ -88,19 +88,29 @@ button {
     box-sizing: border-box;
     font-size: 14px;   
     margin: 0 0 15px;
+    outline: none;
 
 }
 
 .form button {
-    font-family: 'sans-serif';
+    font-family: 'Edu VIC WA NT Beginner', cursive;
     text-transform: uppercase;
     background: #065784;
-    width: 100%;
+    width: 20%;
+    float: right;
     border: none;
-    padding: 15px;
+    padding: 2px;
     color: white;
     font-size: 14px;
     cursor: pointer;
+}
+
+.nav-home{
+    width: 20%;
+    padding: 2px;
+    float: left;
+    cursor: pointer;
+    color: #065784;
 }
 .form button:hover {
     background: #7B8589;

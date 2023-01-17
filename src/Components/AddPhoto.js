@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 class AddPhoto extends Component {
 
@@ -17,6 +18,7 @@ class AddPhoto extends Component {
         }
         if (description && imageLink){
             this.props.onAddPhoto(post)
+            document.getElementById('imgForm').reset()
         }
 
     }
@@ -26,10 +28,11 @@ class AddPhoto extends Component {
     <div>
         <h1> Photowall </h1>
         <div className="form">
-          <form onSubmit={this.handleSubmit}> 
+          <form id = "imgForm" onSubmit={this.handleSubmit}> 
                <input type ="text" placeholder="Link" name="link"/>
                <input type ="text" placeholder="Desciption" name="description"/>
                <button> Post </button>
+               <Link to="/"><i className="fa-solid fa-backward fa-3x nav-home"></i></Link>
           </form>
         </div>
     </div>

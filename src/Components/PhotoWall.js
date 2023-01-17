@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom'
 //anchor tag, href attribute
 function PhotoWall(props) {
 return  <div> 
-             <Link className = "addIcon" to="/AddPhoto"> </Link> 
+            <h1>{props.title}</h1>
+             <Link className = "addIcon" to="/AddPhoto"><i className="fa-solid fa-circle-plus fa-7x"></i> </Link> 
              <div className="photoGrid" >
                   {props.posts
                     .sort(function(x,y) {
@@ -17,6 +18,7 @@ return  <div>
 }
 
 PhotoWall.propTypes = {
+    title : PropTypes.string.isRequired,
     posts: PropTypes.array.isRequired,
     onRemovePhoto: PropTypes.func.isRequired
 }
